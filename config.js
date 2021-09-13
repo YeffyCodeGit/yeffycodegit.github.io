@@ -1,20 +1,18 @@
 let config = {
   startText: [
-    "<center><big><color-4>Welcome to <color-2>yourname</color-2></big>",
-    '<color-grey>Type "help" to get a List of all availiable Commands!</color-grey></center>',
+    "<center><big><color-4>Welcome to my portfolio website!</big>",
+    '<color-grey>Type "help" to get a List of all availiable commands!</color-grey></center>',
   ],
-  path: "name@example.com:~$ ",
+  path: "yeff@portfoliosite~$ ",
   commands: [
-    { command: "Contact", description: "Contact me", action: contact },
     { command: "Links", description: "All my Links", action: link },
+    { command: "About", description: "Information about me", action: about },
   ],
   text: [
-    // Tab-Title
-    { key: "title", value: "Your Name" },
-    // Copyright-text in footer
-    { key: "copyright-text", value: "Copyright 2020 Your Name" },
+    { key: "title", value: "YeffyCodeGit" },
+    { key: "copyright-text", value: "Copyright 2020 YeffyCodeGit" },
     // Terminal Title
-    { key: "title-bar-title", value: "Your Name" },
+    { key: "title-bar-title", value: "YeffyCodeGit" },
   ],
   css: [
     // Radius
@@ -41,8 +39,8 @@ let config = {
 function link(arguments) {
   const links = [
     {
-      type: "Instagram",
-      link: { text: "@example", url: "https://instagram.com/example" },
+      type: "Github",
+      link: { text: "@YeffyCodeGit", url: "https://github.com/YeffyCodeGit" },
     },
   ];
 
@@ -62,29 +60,6 @@ function link(arguments) {
   return result;
 }
 
-function contact(arguments) {
-  const contacts = [
-    {
-      type: "Email",
-      link: {
-        text: "youremail@example.com",
-        url: "mailto:youremail@example.com",
-      },
-    },
-  ];
-
-  let result = "<break><color-4>Contact: </color-4> <break>";
-
-  contacts.forEach((element) => {
-    result +=
-      "    -   <color-2>" +
-      element.type +
-      ": </color-2><link " +
-      element.link.url +
-      " " +
-      element.link.text +
-      " /><break>";
-  });
-
-  return result;
+function about(arguments) {
+    return "<break>Im Yeff (not my real name), a kid who loves programming and everything to do with computers. <break>I started programming with Python, then moved on to learning C# and Java. <break>I learnt Javascript, HTML and CSS at some point because i thought i would try Web Development, but i found it less than interesting. <break>Now I mainly enjoy making libraries, tools, and apps. <break>I don't have many finished projects because I have a tendancy to start projects and not finishing them, but I do have a few completed projects, which you can check on my Github! :D<break>"
 }
