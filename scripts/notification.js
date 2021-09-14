@@ -1,7 +1,6 @@
 const notification = document.getElementById("notification");
 
 function continueClick() {
-  console.log("test");
   notification.style.display = "none";
 }
 

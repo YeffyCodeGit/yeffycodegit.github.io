@@ -7,10 +7,11 @@ let config = {
   commands: [
     { command: "Links", description: "All my Links", action: link },
     { command: "About", description: "Information about me", action: about },
+    { command: "Projects", description: "The projects i've worked on", action: projects },
   ],
   text: [
     { key: "title", value: "YeffyCodeGit" },
-    { key: "copyright-text", value: "Copyright 2020 YeffyCodeGit" },
+    { key: "copyright-text", value: "Copyright 2021 YeffyCodeGit" },
     // Terminal Title
     { key: "title-bar-title", value: "YeffyCodeGit" },
   ],
@@ -62,4 +63,36 @@ function link(arguments) {
 
 function about(arguments) {
     return "<break>Im Yeff (not my real name), a kid who loves programming and everything to do with computers. <break>I started programming with Python, then moved on to learning C# and Java. <break>I learnt Javascript, HTML and CSS at some point because i thought i would try Web Development, but i found it less than interesting. <break>Now I mainly enjoy making libraries, tools, and apps. <break>I don't have many finished projects because I have a tendancy to start projects and not finishing them, but I do have a few completed projects, which you can check on my Github! :D<break>"
+}
+
+function projects(arguments) {
+  const links = [
+    {
+      type: "Pastemyst.java",
+      link: { text: "Github", url: "https://github.com/YeffyCodeGit/pastemyst.java" },
+    },
+    {
+      type: "Neo",
+      link: { text: "Github", url : "https://github.com/Unammed-Language-Project/Neo-Java" }
+    },
+    {
+      type: "Brainfeck",
+      link: { text: "Github", url: "https://github.com/YeffyCodeGit/Brainfeck" }
+    }
+  ];
+
+  let result = "<break><color-4>Projects: </color-4> <break>";
+
+  links.forEach((element) => {
+    result +=
+      "    -   <color-2>" +
+      element.type +
+      ": </color-2><link " +
+      element.link.url +
+      " " +
+      element.link.text +
+      " /><break>";
+  });
+
+  return result;
 }
