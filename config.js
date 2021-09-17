@@ -8,6 +8,7 @@ let config = {
     { command: "Links", description: "All my Links", action: link },
     { command: "About", description: "Information about me", action: about },
     { command: "Projects", description: "The projects i've worked on", action: projects },
+    { command: "Exit", description: "Closes the site", action: exit },
   ],
   text: [
     { key: "title", value: "YeffyCodeGit" },
@@ -95,4 +96,8 @@ function projects(arguments) {
   });
 
   return result;
+}
+
+function exit(arguments) {
+  window.close();
 }
